@@ -159,9 +159,6 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 .idea/
 .idea/vcs.xml
-.idea/HeadphoneWiki.iml
-.idea/misc.xml
-.idea/sqldialects.xml
 __pycache__/updateDatabase.cpython-310.pyc
 .idea/HeadphoneWiki.iml
 .idea/misc.xml
