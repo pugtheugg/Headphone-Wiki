@@ -1,7 +1,7 @@
 from duckduckgo_search import DDGS
 from scrapy.crawler import CrawlerProcess
 
-from backend.src.spiders.crinacle_iem_spider import CrinacleIemSpider
+from backend.spiders.crinacle_iem_spider import CrinacleIemSpider
 from crinacleController import app
 from databaseHandler import DatabaseHandler
 

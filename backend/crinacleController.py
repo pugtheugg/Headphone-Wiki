@@ -12,9 +12,9 @@ def get_data():
 
     query = """SELECT * FROM iem"""
 
-    get_data(query)
+    # get_data(query)
 
-
+    return jsonify(data_store)
 
 
 # Route for handling POST requests
