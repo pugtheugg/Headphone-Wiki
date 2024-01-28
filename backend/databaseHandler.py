@@ -2,14 +2,25 @@ import sqlite3
 
 
 class DatabaseHandler:
-    def __init__(self, database):
-        self.database = f"{database}.db"
-        self.connection = sqlite3.connect(self.database)
+    def __init__(self):
+        db_file = """backend/iems.db"""
+        self.connection = sqlite3.connect(db_file)
         self.cursor = self.connection.cursor()
 
-    def close(self):
+    def close_connection(self):
         if self.connection:
             self.connection.close()
+
+    def get_all_iems(self):
+        """
+        Query all rows in the iems table
+        """
+        self.cursor.execute("SELECT * FROM iem")
+
+        data = self.cursor.fetchall()
+
+        return data
+
 
     def execute_query(self, query, values=None):
         if self.cursor:
@@ -19,7 +30,7 @@ class DatabaseHandler:
                 self.cursor.execute(query)
             self.connection.commit()
 
-    def get_data(self, query):
+    def return_data(self, query):
         if self.cursor:
             self.cursor.execute(query)
             return self.cursor.fetchall()

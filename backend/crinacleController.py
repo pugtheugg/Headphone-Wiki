@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from databaseHandler import *
 
 app = Flask(__name__)
 
@@ -10,11 +11,11 @@ data_store = '{"name":"John", "age":30, "car":null}'
 @app.route('/api/data', methods=['GET'])
 def get_data():
 
-    query = """SELECT * FROM iem"""
+    db_handler = DatabaseHandler()
+    data = db_handler.get_all_iems()
+    db_handler.close_connection()
 
-    # get_data(query)
-
-    return jsonify(data_store)
+    return jsonify(data)
 
 
 # Route for handling POST requests

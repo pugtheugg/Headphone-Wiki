@@ -30,10 +30,8 @@ if __name__ == '__main__':
 
     # get_crinicle_data()
 
-    with open('iems.jsonl', 'r') as json_file:
-        json_list = list(json_file)
-
-    iem_table = DatabaseHandler("iems")
+    # with open('iems.jsonl', 'r') as json_file:
+    #     json_list = list(json_file)
 
     # iem_table.execute_query("""DROP TABLE IF EXISTS iem""")
     #
